@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "MuseScore Sheet Downloader",
+  "version": "1.0",
+  "description": "Download music sheets from MuseScore.com",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://musescore.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "MuseScore Downloader"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://musescore.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
